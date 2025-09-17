@@ -125,4 +125,4 @@ Através da aplicação da técnica, foi possível elicitar alguns dos primeiros
 ## Autor(es)
 | Data | Versão | Descrição | Autor(es) |
 | -- | -- | -- | -- |
-| 16/09/2025 | 1.0 | Criação do documento | Fabio Henrique, Antonio José, Rafael Paraquet |
+| 16/09/2025 | 1.0 | Criação do documento | Fabio Henrique, Antonio José, Rafael Paraquett |
