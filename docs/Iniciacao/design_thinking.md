@@ -55,34 +55,34 @@ title: Design Thinking
 
 - **Brainstorming**: 
 - Para Alunos:
- - Um "catálogo" de monitores com filtros por disciplina, curso e horários.
- - Sistema de agendamento integrado a uma agenda online.
- - Avaliação e feedback (estrelas/comentários) para os monitores após a aula.
- - Notificações automáticas via app ou e-mail para lembrar das sessões.
- - Lista de espera para horários de monitores muito procurados.
+  - Um "catálogo" de monitores com filtros por disciplina, curso e horários.
+  - Sistema de agendamento integrado a uma agenda online.
+  - Avaliação e feedback (estrelas/comentários) para os monitores após a aula.
+  - Notificações automáticas via app ou e-mail para lembrar das sessões.
+  - Lista de espera para horários de monitores muito procurados.
 - Para Monitores:
- - Painel de controle (dashboard) pessoal com agenda, próximos alunos e horas totais.
- - Ferramenta para definir e bloquear horários de disponibilidade facilmente.
- - Um chat interno para comunicação, separando-a do WhatsApp pessoal.
- - Registro de horas com "um clique" ao final de cada sessão, para aprovação do supervisor.
+  - Painel de controle (dashboard) pessoal com agenda, próximos alunos e horas totais.
+  - Ferramenta para definir e bloquear horários de disponibilidade facilmente.
+  - Um chat interno para comunicação, separando-a do WhatsApp pessoal.
+  - Registro de horas com "um clique" ao final de cada sessão, para aprovação do supervisor.
 - Para Coordenação:
- - Portal para publicação e divulgação de vagas de monitoria.
- - Sistema digital para recebimento e comparação de candidaturas.
- - Dashboard com gráficos sobre as matérias mais procuradas e horas realizadas.
- - Funcionalidade para aprovar/reprovar horas registradas pelos monitores.
+  - Portal para publicação e divulgação de vagas de monitoria.
+  - Sistema digital para recebimento e comparação de candidaturas.
+  - Dashboard com gráficos sobre as matérias mais procuradas e horas realizadas.
+  - Funcionalidade para aprovar/reprovar horas registradas pelos monitores.
 - **Seleção de Ideias**: As ideias foram priorizadas utilizando uma matriz de Impacto vs. Esforço. Foram selecionadas aquelas que atacavam diretamente as dores centrais de todos os usuários (alto impacto) e que poderiam ser desenvolvidas com um esforço razoável dentro do escopo de um projeto inicial (MVP - Mínimo Produto Viável).
 - **Ideias Selecionadas**: 
- - Plataforma Centralizada de Agendamento: Unificar a busca por monitores, a visualização de perfis e a marcação de aulas em uma única interface. Resolve a dor principal da aluna Mariana e do monitor Lucas.
- - Módulo de Gestão de Candidaturas: Criar um portal para que a coordenação publique vagas e os alunos se candidatem online. Ataca diretamente a ineficiência do recrutamento sentida pela Prof.ª Cláudia.
- - Sistema Simplificado de Registro e Validação de Horas: Desenvolver uma ferramenta para que o monitor registre suas horas e a coordenação valide, automatizando a burocracia.
- - Dashboard de Gestão com Relatórios Iniciais: Painel para a coordenação com métricas essenciais (total de horas, monitores ativos, disciplinas com maior demanda).
+  - Plataforma Centralizada de Agendamento: Unificar a busca por monitores, a visualização de perfis e a marcação de aulas em uma única interface. Resolve a dor principal da aluna Mariana e do monitor Lucas.
+  - Módulo de Gestão de Candidaturas: Criar um portal para que a coordenação publique vagas e os alunos se candidatem online. Ataca diretamente a ineficiência do recrutamento sentida pela Prof.ª Cláudia.
+  - Sistema Simplificado de Registro e Validação de Horas: Desenvolver uma ferramenta para que o monitor registre suas horas e a coordenação valide, automatizando a burocracia.
+  - Dashboard de Gestão com Relatórios Iniciais: Painel para a coordenação com métricas essenciais (total de horas, monitores ativos, disciplinas com maior demanda).
 
 #### **3.4. Prototipagem**
 
 - **Descrição do Protótipo**: Foi desenvolvido um protótipo de alta fidelidade interativo. Ele consiste em telas navegáveis que simulam a experiência de uso da aplicação web em um navegador, sem a necessidade de programação de back-end. O protótipo foca nos três fluxos principais de uso:
- - Jornada do Aluno: Desde a busca por uma disciplina até a confirmação do agendamento.
- - Jornada do Monitor: Login, visualização da agenda e registro de uma sessão realizada.
- - Jornada da Coordenação: Visualização do dashboard principal e do processo de aprovação de horas.
+  - Jornada do Aluno: Desde a busca por uma disciplina até a confirmação do agendamento.
+  - Jornada do Monitor: Login, visualização da agenda e registro de uma sessão realizada.
+  - Jornada da Coordenação: Visualização do dashboard principal e do processo de aprovação de horas.
 - **Materiais Utilizados**: Para a criação do protótipo interativo, foi utilizada a ferramenta de design de interface Figma. Ícones, componentes de UI e guias de estilo foram criados para garantir consistência visual e uma experiência de usuário realista.
 - **Testes Realizados**: O protótipo foi avaliado por alunos que tiveram acesso a versão beta.
 
