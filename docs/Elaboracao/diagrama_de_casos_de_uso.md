@@ -1,6 +1,6 @@
 ---
-id: diagrama_de_sequencia
-title: Diagrama de Sequencia
+id: diagrama_de_casos_de_uso
+title: Diagrama de Casos de uso
 ---
 
 ## Casos de Uso

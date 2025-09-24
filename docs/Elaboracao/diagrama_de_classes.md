@@ -1,6 +1,6 @@
 ---
-id: diagrama_de_casos de uso
-title: Diagrama de Casos de Uso
+id: diagrama_de_classes 
+title: Diagrama de Classes
 ---
 
 ## Casos de Uso
