@@ -4,26 +4,27 @@ title: Documento de Arquitetura
 ---
 # Documento de Arquitetura de Software (DAS)
 
-# "Nome do Projeto"
+# "Ibmec Monitoria"
 
 # Introdução
 
 ## Proposta
 
 <p align = "justify">
-Este documento apresenta uma visão geral da arquitetura do sistema, utilizando diferentes visões arquiteturais para destacar diferentes aspectos do sistema. É utilizado para capturar as decisões arquiteturais significativas que fizeram parte do sistema.
+Este documento apresenta uma visão geral da arquitetura do sistema, utilizando diferentes visões arquiteturais para destacar os principais aspectos do aplicativo.
+O objetivo é capturar as decisões arquiteturais significativas que fizeram parte do projeto, servindo como guia para desenvolvimento, manutenção e evolução futura da aplicação.
 </p>
 
 ## Escopo
 
 <p align = "justify">
-A aplicação "XXXX" tem o objetivo fornecer...
+A aplicação **Ibmec Monitoria** foi desenvolvida para atender às necessidades acadêmicas de alunos e monitores da instituição, oferecendo um ambiente digital que centraliza a organização de monitorias, permitindo agendamento, comunicação e acompanhamento de atividades.
 </p>
 
 ## Definições, Acrônimos e Abreviações
 
-- MVC -
-- MVT -
+- MVC - Model-View-Controller: padrão de arquitetura que separa a aplicação em três camadas principais (modelo, visão e controle).
+- MVT - Model-View-Template: padrão de arquitetura utilizado em frameworks como Django, no qual a camada de template substitui a visão do MVC tradicional.
 - SIGLA PARA O APP - Nome do Aplicativo
 
 ## Visão Geral
@@ -43,18 +44,20 @@ O Documento de Arquitetura de Software (DAS) trata-se de uma visão geral de tod
 ## Cliente-Servidor
 
 <p align = "justify">
-Cliente-Servidor é um modelo de arquitetura...
+O modelo Cliente-Servidor é utilizado como base da arquitetura do aplicativo **Ibmec Monitoria**.  
+Neste modelo, o **cliente (frontend)** é responsável pela interface e interação com o usuário, enquanto o **servidor (backend)** gerencia a lógica de negócio, persistência e comunicação com o banco de dados.
 </p>
 
 Cliente (Frontend):
 
-- View: Consiste.....
+- View: Consiste na interface gráfica do usuário, implementada em frameworks modernos (ex.: React Native ou Flutter para mobile e React.js para web).  
+  Responsável por exibir os dados, coletar entradas do usuário e enviar requisições ao servidor.
 
 Servidor (Backend):
 
-- Controller: faz a conexão entre as camadas...
-- Service: Responsável pela lógica...
-- Model: Responsável pela persistência...
+- Controller: Realiza a conexão entre as camadas, recebendo requisições do cliente e direcionando para os serviços adequados.
+- Service: Responsável pela lógica de negócio da aplicação, como agendamento de monitorias, autenticação de usuários e gestão de notificações.  
+- Model: Responsável pela persistência dos dados, incluindo armazenamento e recuperação em banco de dados relacional (ex.: PostgreSQL ou MySQL).
 
 # Objetivos de Arquitetura e Restrições
 
@@ -62,15 +65,15 @@ Servidor (Backend):
 
 <p align = "justify">
 Segurança:
-   -
+   - Utilização de autenticação via token (JWT) e criptografia para proteger dados sensíveis (como senhas e informações pessoais dos usuários).
 Persistência:
-   - 
+   - Armazenamento confiável em banco de dados relacional (PostgreSQL), garantindo consistência e integridade das informações sobre alunos, monitores e agendamentos.
 Privacidade:
-   - Middlewares: Foi usado middlewares...
+   - Uso de middlewares de autenticação e autorização para controlar acesso, assegurando que apenas usuários autorizados possam visualizar e editar informações.
 Desempenho:
-   Requisições...
+   Requisições otimizadas por meio de API RESTful, com uso de cache e paginação para reduzir carga no servidor e melhorar o tempo de resposta.
 Reusabilidade:
-   Componentes no Frontend...
+   Componentes no frontend desenvolvidos em React Native e React.js de forma modular, permitindo reaproveitamento em diferentes telas do aplicativo.
 </p>
 
 ## Restrições
