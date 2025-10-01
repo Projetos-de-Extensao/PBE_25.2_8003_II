@@ -24,10 +24,7 @@ Foi levantado um ponto importante sobre o app e, assim, foi produzido o mapa men
 [![Mapa Mental da Plataforma](../assets/Mapas_Mentais/Mapa%20Mental.jpg)](../assets/Mapas_Mentais/Mapa%20Mental.jpg)
 
  
- 
-### Mapa mental 2
- 
-[![Mapa mental Brainstorm](../assets/Mapas_Mentais/image.png)](../assets/Mapas_Mentais/image.png)
+
  
 ## Conclusão
  
