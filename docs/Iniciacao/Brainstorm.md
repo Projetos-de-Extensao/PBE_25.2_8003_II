@@ -79,11 +79,13 @@ A equipe se reuniu para debater ideias gerais sobre o projeto via..., começou .
 ---
  
 ### 5. "Outras perguntas pertinentes ao contexto", Como seria a forma de adicionar do cliente adicionar os produtos ?
+
 <p align = "justify">
 <b>Visão de Cadastro</b> - O cliente poderá adicionar novos conteúdos por meio de um formulário padronizado, com campos de título, descrição, categoria, disciplina, anexos (arquivos e links) e definição de visibilidade (público ou restrito).
 </p>
  
 ### 6. Quais informações seriam interessante para o cliente?
+
 <p align = "justify">
    <b>Visão Informacional</b> - Informações sobre monitores, incluindo formação, disciplinas atendidas, avaliações recebidas e disponibilidade de horários.
    
