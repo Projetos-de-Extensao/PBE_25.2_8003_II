@@ -20,55 +20,135 @@ Iniciamos o projeto através dos levantamentos iniciais da equipe, após discuss
 
 ### Tela Login
 
-[![Prototipo 1](../assets/Prototipo/image.png)](../assets/Prototipo/image.png)
+```plantuml
+@startuml
+salt
+{
+  {+
+    Plataforma de Monitoria Acadêmica — Login
+    ------------------------------------------
+    Email:  [ usuario@email.com        ]
+    Senha:  [ ****                     ]
+    ------------------------------------------
+    [      ENTRAR      ]
+    [    CRIAR CONTA   ]
+    [  ESQUECI SENHA   ]
+  }
+}
+@enduml
+```
 
-### Tela Cadastro 1
 
-[![Prototipo 2](../assets/Prototipo/image.png)](../assets/Prototipo/image.png)
 
-### Tela Cadastro 2
+### Tela Cadastro 
 
-[![Prototipo 3](../assets/Prototipo/image.png)](../assets/Prototipo/image.png)
+```plantuml
+@startsalt
+{+
+  {T
+    + 📱 Conta Nova
+  }
+  {
+    Nome Completo   | "Maria Fernanda"
+    Email           | "mariaf@email.com"
+    Senha           | "****"
+    Confirmar Senha | "****"
+    Curso (opcional)| "Administração"
+    [] Concordo com os termos 
+    [ Criar Conta ]
+    --
+    Já é cadastrado? 
+    [ Entrar ]
+  }
+}
+@endsalt
+```
 
-### Tela Esqueceu Senha
 
-[![Prototipo 4](../assets/Prototipo/image.png)](../assets/Prototipo/image.png)
+### Tela de Sessão
 
-### Tela do Feed
+```plantuml
+@startuml
+salt
+{
+  {+
+    🗓️ Tela de Sessão
+    -------------------------------------
+    Data:        [ 10/10/2025         ]
+    Horário:     [ 14:00              ]
+    Local:       [ Sala 205           ]
+    Descrição:   [ Álgebra Linear     ]
+    -------------------------------------
+    [ Confirmar ]|[   Cancelar   ]
+  }
+}
+@enduml
+```
 
-[![Prototipo 5](../assets/Prototipo/image.png)](../assets/Prototipo/image.png)
+### Tela de Dashboard
 
-### Tela Feed com configurações
+```plantuml
+@startsalt
+{+
+  {T
+    + **PLATAFORMA DE MONITORIA** | [🔍] | [👥] | [⚙️]
+  }
+  {
+    **BUSCAR MONITORES:**
+    "Digite a matéria..."  | [🔍]
+    --
+    .
+    **DISCIPLINAS**
+    [Matemática] [Física] [Química] [Programação] [+]
+    --
+    .
+    **MONITORES EM DESTAQUE**
+    {-
+      .João Silva     | Matemática    | [VER PERFIL]
+      .Maria Oliveira | Física        | [VER PERFIL]
+      .Carlos Souza   | Química       | [VER PERFIL]
+      .Ana Martins    | Programação   | [VER PERFIL]
+    }
+    --
+    
+  }
+}
+@endsalt
+```
 
-[![Prototipo 6](../assets/Prototipo/image.png)](../assets/Prototipo/image.png)
+### Tela de Monitoria
 
-### Tela Perfil
+```plantuml
+@startsalt
+{+
+  {T
+    + **PLATAFORMA DE MONITORIA** | [🔍] | [👥] | [⚙️]
+  }
+  {
+    **BUSCAR MONITORES:**
+    "Digite a matéria..."  | [🔍]
+    --
+    .
+    **DISCIPLINAS**
+    [Matemática] [Física] [Química] [Programação] [+]
+    --
+    .
+    **MONITORES EM DESTAQUE**
+    {-
+      .João Silva     | Matemática    | [VER PERFIL]
+      .Maria Oliveira | Física        | [VER PERFIL]
+      .Carlos Souza   | Química       | [VER PERFIL]
+      .Ana Martins    | Programação   | [VER PERFIL]
+    }
+    --
+    
+  }
+}
+@endsalt
+```
 
-[![Prototipo 7](../assets/Prototipo/image.png)](../assets/Prototipo/image.png)
 
-### Tela Cadastrar torneio 1
 
-[![Prototipo 8](../assets/Prototipo/image.png)](../assets/Prototipo/image.png)
-
-### Tela Cadastrar torneio 2
-
-[![Prototipo 9](../assets/Prototipo/image.png)](../assets/Prototipo/image.png)
-
-### Tela Cadastrar torneio 3
-
-[![Prototipo 10](../assets/Prototipo/image.png)](../assets/Prototipo/image.png)
-
-### Tela Cadastrar torneio 4
-
-[![Prototipo 11](../assets/Prototipo/image.png)](../assets/Prototipo/image.png)
-
-### Tela com meus torneios
-
-[![Prototipo 12](../assets/Prototipo/image.png)](../assets/Prototipo/image.png)
-
-### Tela de inscrição em torneio
-
-[![Prototipo 13](../assets/Prototipo/image.png)](../assets/Prototipo/image.png)
 
 <p align = "justify">
 Na primeira versão do protótipo utilizamos a ferramenta <a href="https://material.io/resources/color/#!/?view.left=0&view.right=0">Material Design Color Tool</a>  para auxiliar na criação da paleta de cores do aplicativo, definimos as cores base do aplicativo mas as cores definidas para as telas 12 e 13 ainda não foram decididas.
