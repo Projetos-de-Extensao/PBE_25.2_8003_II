@@ -3,85 +3,88 @@ id: diagrama_de_classes
 title: Diagrama de Classes
 ---
 
-## Casos de Uso
+## Diagrama de Classes
 
-### Descrição:
+```plantuml
+@startuml
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam classBackgroundColor LightBlue
+skinparam classBorderColor Black
+skinparam classFontSize 14
 
-- Contas
-	- Criação
-	- Entrada
-	- Alteração
-	- Recuperar Senha
-	- Exclusão Lógica
-	- Visualização
+class Usuario {
+  - id
+  - nome
+  - email
+  - senha
+  + login()
+  + logout()
+  + editarPerfil()
+  + visualizarPerfil()
+}
 
-- Perfis
-	- Edição
-	- Pesquisar
-	- Visualização
-	- Seguir/Deixar de Seguir
+class Aluno {
+  - matricula
+  - curso
+  + buscarMonitor()
+  + agendarSessao()
+  + cancelarSessao()
+  + avaliarSessao()
+  + candidatarMonitor()
+}
 
-- Postagens (Público) 	 	
-	- Criação
-	- Exclusão
-	- Interação
-	- Visualização
+class Monitor {
+  - areaEspecialidade
+  - disponibilidade
+  + gerenciarAgenda()
+  + aceitarSolicitacao()
+  + recusarSolicitacao()
+  + registrarHoras()
+  + consultarHistorico()
+}
 
-- Mensagens (Privado)
-	- Criação
-	- Exclusão
-	- Visualização
+class Coordenacao {
+  - cargo
+  - departamento
+  + aprovarCandidato()
+  + gerarRelatorio()
+  + supervisionarMonitores()
+}
 
-- Galerias
-	- Albuns
-- Blogs
-- Grupos
+class Sessao {
+  - idSessao
+  - data
+  - hora
+  - status
+  - topico
+  + confirmar()
+  + cancelar()
+}
 
-### Criação de uma conta no sistema
+class Candidatura {
+  - idCandidatura
+  - data
+  - status
+  + submeter()
+  + avaliar()
+}
 
-* Atores:
+class Relatorio {
+  - idRelatorio
+  - periodo
+  - metricas
+  + gerar()
+  + exportar()
+}
 
-	- Usuário
-	- Sistema
+Usuario <|-- Aluno
+Usuario <|-- Monitor
+Usuario <|-- Coordenacao
 
-- Pré-Condições:
-	- Nenhuma
-
-* Fluxo Básico:
-    1. Usuário fornece e-mail, senha e confirmações
-    2. Dados do Usuário são validados pelo Sistema
-    3. Dados do Usuário são encriptados pelo Sistema
-    4. Dados do Usuário são persistidos pelo Sistema
-    5. Sistema gera um link com prazo de expiração
-    6. Sistema envia e-mail de verificação, com o link, para o Usuário
-    7. Usuário confirma o e-mail antes do link expirar
-    8. Sistema confirma que o Cadastro do Usuário foi realizado com sucesso
-    9. Sistema redireciona o Usuário para a página de Entrada
-
-- Fluxos Alternativos:
-	- 2a. E-mail do Usuário é inválido
-		2a1. Sistema exibe mensagem de erro
-	- 2b. Senha do Usuário não respeita regras de segurança
-		- 2b1. Sistema exibe mensagem de erro
-	- 3a. Usuário tenta confirmar o e-mail depois de o link expirar
-		- 3a1. Sistema sugere que o Usuário realize um novo Cadastro
-
-### Entrada do usuário no sistema
-
-- Atores:
-	- Usuário
-	- Sistema
-
-- Pré-Condições:
-	Usuário deve estar cadastrado
-
-- Fluxo Básico:
-    - 1. Usuário fornece e-mail e senha
-	- 2. Sistema autentica o Usuário
-	- 3. Sistema redireciona o Usuário para a página inicial
-
-- Fluxos Alternativos:
-	- 2a. Dados do Usuário Inválidos
-		- 2a1. Sistema exibe mensagem de erro
-	- 3a. Primeio acesso do Usuário
-		- 3a1. Sistema redireciona o Usuário para a página de edição de perfil
+Aluno --> Sessao : solicita
+Monitor --> Sessao : conduz
+Aluno --> Candidatura : envia
+Coordenacao --> Candidatura : avalia
+Coordenacao --> Relatorio : gera
+@enduml
