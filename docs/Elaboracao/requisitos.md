@@ -29,26 +29,43 @@ Restrições:
 - Compatível com navegadores modernos e smartphones Android ≥ 9.0 e iOS ≥ 13.
 
 ## 3. Requisitos Funcionais
+
 RF01 – Cadastro de Usuário: permitir que novos usuários realizem cadastro com nome, e-mail, senha e perfil de acesso. Um e-mail de confirmação deve ser enviado.
+
 RF02 – Login e Autenticação: permitir login por e-mail e senha, utilizando tokens (JWT).
+
 RF03 – Agendamento de Monitoria: permitir que alunos visualizem disponibilidade e solicitem sessões.
+
 RF04 – Gerenciamento de Agendamentos: monitores podem aprovar ou recusar solicitações.
+
 RF05 – Notificações: enviar notificações de confirmação, alteração ou cancelamento.
+
 RF06 – Materiais de Apoio: monitores podem anexar materiais (PDFs, links, vídeos).
+
 RF07 – Histórico de Sessões: permitir consulta ao histórico por alunos e monitores.
+
 RF08 – Administração de Disciplinas: administradores podem cadastrar disciplinas e vincular monitores.
 
 ## 4. Requisitos Não Funcionais
+
 RNF01 – Segurança: senhas devem ser criptografadas (bcrypt).
+
 RNF02 – Desempenho: tempo de resposta inferior a 2 segundos.
+
 RNF03 – Disponibilidade: sistema disponível 99% do tempo.
+
 RNF04 – Usabilidade: interface responsiva, clara e adaptada a diferentes telas.
+
 RNF05 – Portabilidade: compatível com Android ≥ 9, iOS ≥ 13 e navegadores modernos.
+
 RNF06 – Escalabilidade: arquitetura deve suportar aumento de usuários sem perda significativa de desempenho.
 
 ## 5. Regras de Negócio
+
 RN01 – Validação de Dados de Cadastro: e-mail deve ser único e válido.
+
 RN02 – Recuperação de Senha: envio de link seguro para redefinição por e-mail.
+
 RN03 – Perfis de Acesso:
 
 Administrador: gerencia disciplinas, monitores e relatórios.
