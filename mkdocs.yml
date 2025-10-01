@@ -87,7 +87,7 @@ markdown_extensions:
       permalink: true
 
 plugins:
-  - puml:
+  - plantuml:
       puml_url: https://www.plantuml.com/plantuml/
       puml_keyword: plantuml
   - minify:
