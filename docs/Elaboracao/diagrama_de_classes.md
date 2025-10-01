@@ -88,3 +88,4 @@ Aluno --> Candidatura : envia
 Coordenacao --> Candidatura : avalia
 Coordenacao --> Relatorio : gera
 @enduml
+```
