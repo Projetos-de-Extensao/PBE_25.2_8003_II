@@ -31,6 +31,11 @@ INSTALLED_APPS = [
     'vagas',
 ]
 
+
+AUTH_USER_MODEL = 'vagas.Usuario'
+
+
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

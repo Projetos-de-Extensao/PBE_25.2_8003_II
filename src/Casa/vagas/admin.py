@@ -1,11 +1,10 @@
 from django.contrib import admin
-from vagas.models import Usuario, Professor, Aluno, Monitor, Disciplina, Presenca, Mensagem, Relatorio
+from vagas.models import  Aluno, Monitor, Coordenacao, Sessao, Candidatura, Relatorio
 
-admin.site.register(Usuario)
-admin.site.register(Professor)
+
 admin.site.register(Aluno)
 admin.site.register(Monitor)
-admin.site.register(Disciplina)
-admin.site.register(Presenca)
-admin.site.register(Mensagem)
+admin.site.register(Coordenacao)
+admin.site.register(Sessao)
+admin.site.register(Candidatura)
 admin.site.register(Relatorio)
