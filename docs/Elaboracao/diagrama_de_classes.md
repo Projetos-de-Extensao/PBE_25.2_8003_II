@@ -1,91 +1,97 @@
----
-id: diagrama_de_classes 
-title: Diagrama de Classes
+
 ---
 
+id: diagrama_de_classes
+
+title: Diagrama de Classes
+
+---
+
+
+
 ## Diagrama de Classes
+
 
 ```plantuml
 @startuml
 skinparam classAttributeIconSize 0
 skinparam shadowing false
-skinparam classBackgroundColor LightBlue
+skinparam classBackgroundColor LightGreen
 skinparam classBorderColor Black
 skinparam classFontSize 14
 
+' --- Definição das Classes (Models) ---
+
 class Usuario {
-  - id
-  - nome
-  - email
-  - senha
-  + login()
-  + logout()
-  + editarPerfil()
-  + visualizarPerfil()
+.. Atributos ..
++ tipo [aluno, monitor, professor, admin]
+}
+
+class Disciplina {
+.. Atributos ..
++ nome
++ codigo
+}
+
+class Professor {
+' (Perfil do Usuario)
 }
 
 class Aluno {
-  - matricula
-  - curso
-  + buscarMonitor()
-  + agendarSessao()
-  + cancelarSessao()
-  + avaliarSessao()
-  + candidatarMonitor()
+.. Atributos ..
++ matricula
+' (Perfil do Usuario)
 }
 
 class Monitor {
-  - areaEspecialidade
-  - disponibilidade
-  + gerenciarAgenda()
-  + aceitarSolicitacao()
-  + recusarSolicitacao()
-  + registrarHoras()
-  + consultarHistorico()
+.. Atributos ..
++ horario_fixo
+' (Perfil do Usuario)
 }
 
-class Coordenacao {
-  - cargo
-  - departamento
-  + aprovarCandidato()
-  + gerarRelatorio()
-  + supervisionarMonitores()
+class Presenca {
+.. Atributos ..
++ data
++ presente
 }
 
-class Sessao {
-  - idSessao
-  - data
-  - hora
-  - status
-  - topico
-  + confirmar()
-  + cancelar()
-}
-
-class Candidatura {
-  - idCandidatura
-  - data
-  - status
-  + submeter()
-  + avaliar()
+class Mensagem {
+.. Atributos ..
++ conteudo
++ data_envio
 }
 
 class Relatorio {
-  - idRelatorio
-  - periodo
-  - metricas
-  + gerar()
-  + exportar()
+.. Atributos ..
++ data
++ conteudo
 }
 
-Usuario <|-- Aluno
-Usuario <|-- Monitor
-Usuario <|-- Coordenacao
+' --- Relacionamentos de Perfil (OneToOneField) ---
+' Um Usuário tem um perfil de Aluno, Monitor OU Professor
+Usuario "1" -- "1" Aluno : usuario
+Usuario "1" -- "1" Monitor : usuario
+Usuario "1" -- "1" Professor : usuario
 
-Aluno --> Sessao : solicita
-Monitor --> Sessao : conduz
-Aluno --> Candidatura : envia
-Coordenacao --> Candidatura : avalia
-Coordenacao --> Relatorio : gera
+' --- Relacionamentos de Disciplina (ManyToManyField) ---
+' Professores e Monitores podem ter várias Disciplinas
+Professor "n" -- "n" Disciplina : disciplina
+Monitor "n" -- "n" Disciplina : disciplinas
+
+' --- Relacionamentos da Presenca (ForeignKey) ---
+' Presenca é uma classe de associação
+Presenca "n" --> "1" Aluno : aluno
+Presenca "n" --> "1" Monitor : monitor
+Presenca "n" --> "1" Disciplina : disciplina
+
+' --- Relacionamentos do Relatorio (ForeignKey) ---
+Relatorio "n" --> "1" Monitor : monitor
+Relatorio "n" --> "1" Disciplina : disciplina
+
+' --- Relacionamentos da Mensagem (ForeignKey Reflexivo) ---
+' Mensagem aponta para Usuário duas vezes
+Mensagem "n" --> "1" Usuario : remetente
+Mensagem "n" --> "1" Usuario : destinatario
+
 @enduml
 ```

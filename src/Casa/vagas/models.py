@@ -1,9 +1,12 @@
-
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
 
 class Usuario(AbstractUser):
+    """
+    Modelo de usuário customizado que estende o AbstractUser padrão.
+    Adiciona um campo 'tipo' para controle de permissões e papéis.
+    """
     TIPO_USUARIO = [
         ('aluno', 'Aluno'),
         ('monitor', 'Monitor'),
@@ -17,6 +20,9 @@ class Usuario(AbstractUser):
 
 
 class Disciplina(models.Model):
+    """
+    Modelo para representar as disciplinas oferecidas.
+    """
     nome = models.CharField(max_length=100)
     codigo = models.CharField(max_length=20, unique=True)
 
@@ -25,6 +31,10 @@ class Disciplina(models.Model):
 
 
 class Professor(models.Model):
+    """
+    Modelo que vincula um Usuário com tipo 'professor' a 
+    uma ou mais Disciplinas que ele leciona.
+    """
     usuario = models.OneToOneField(Usuario, on_delete=models.CASCADE)
     disciplina = models.ManyToManyField(Disciplina, related_name='professores')
 
@@ -33,6 +43,10 @@ class Professor(models.Model):
 
 
 class Aluno(models.Model):
+    """
+    Modelo que vincula um Usuário com tipo 'aluno' e 
+    armazena sua matrícula.
+    """
     usuario = models.OneToOneField(Usuario, on_delete=models.CASCADE)
     matricula = models.CharField(max_length=20, unique=True)
 
@@ -41,6 +55,10 @@ class Aluno(models.Model):
 
 
 class Monitor(models.Model):
+    """
+    Modelo que vincula um Usuário com tipo 'monitor' às 
+    disciplinas das quais ele é monitor e seu horário fixo.
+    """
     usuario = models.OneToOneField(Usuario, on_delete=models.CASCADE)
     disciplinas = models.ManyToManyField(Disciplina, related_name='monitores')
     horario_fixo = models.CharField(max_length=100, help_text="Ex: Segunda 10h-12h")
@@ -50,6 +68,10 @@ class Monitor(models.Model):
 
 
 class Presenca(models.Model):
+    """
+    Registra a presença de um Aluno em uma monitoria,
+    indicando o Monitor, a Disciplina e a data.
+    """
     aluno = models.ForeignKey(Aluno, on_delete=models.CASCADE)
     monitor = models.ForeignKey(Monitor, on_delete=models.CASCADE)
     disciplina = models.ForeignKey(Disciplina, on_delete=models.CASCADE)
@@ -61,6 +83,10 @@ class Presenca(models.Model):
 
 
 class Mensagem(models.Model):
+    """
+    Modelo para um sistema simples de troca de mensagens
+    entre dois Usuários (remetente e destinatário).
+    """
     remetente = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name='mensagens_enviadas')
     destinatario = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name='mensagens_recebidas')
     conteudo = models.TextField()
@@ -71,6 +97,10 @@ class Mensagem(models.Model):
 
 
 class Relatorio(models.Model):
+    """
+    Permite que um Monitor submeta relatórios de atividades
+    para uma disciplina específica.
+    """
     monitor = models.ForeignKey(Monitor, on_delete=models.CASCADE)
     disciplina = models.ForeignKey(Disciplina, on_delete=models.CASCADE)
     data = models.DateField(auto_now_add=True)

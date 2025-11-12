@@ -1,16 +1,49 @@
-# minhaapp/api.py
-from rest_framework import viewsets, generics
-from rest_framework.response import Response
-from rest_framework.decorators import action
-from myapp.models import Produto
-from myapp.serializers import ProdutoSerializer
+from rest_framework import viewsets
+from .models import (
+    Usuario, Disciplina, Professor, Aluno, 
+    Monitor, Presenca, Mensagem, Relatorio
+)
+from .serializers import (
+    UsuarioSerializer, DisciplinaSerializer, ProfessorSerializer, AlunoSerializer, 
+    MonitorSerializer, PresencaSerializer, MensagemSerializer, RelatorioSerializer
+)
 
-class ProdutoViewSet(viewsets.ModelViewSet):
-    queryset = Produto.objects.all()
-    serializer_class = ProdutoSerializer
-    
-    @action(detail=False, methods=['get'])
-    def disponiveis(self, request):
-        produtos = Produto.objects.filter(disponivel=True)
-        serializer = self.get_serializer(produtos, many=True)
-        return Response(serializer.data)
+class UsuarioViewSet(viewsets.ModelViewSet):
+    """Endpoint da API para visualização e edição de Usuários."""
+    queryset = Usuario.objects.all().order_by('-date_joined')
+    serializer_class = UsuarioSerializer
+
+class DisciplinaViewSet(viewsets.ModelViewSet):
+    """Endpoint da API para visualização e edição de Disciplinas."""
+    queryset = Disciplina.objects.all()
+    serializer_class = DisciplinaSerializer
+
+class ProfessorViewSet(viewsets.ModelViewSet):
+    """Endpoint da API para visualização e edição de Professores."""
+    queryset = Professor.objects.all()
+    serializer_class = ProfessorSerializer
+
+class AlunoViewSet(viewsets.ModelViewSet):
+    """Endpoint da API para visualização e edição de Alunos."""
+    queryset = Aluno.objects.all()
+    serializer_class = AlunoSerializer
+
+class MonitorViewSet(viewsets.ModelViewSet):
+    """Endpoint da API para visualização e edição de Monitores."""
+    queryset = Monitor.objects.all()
+    serializer_class = MonitorSerializer
+
+class PresencaViewSet(viewsets.ModelViewSet):
+    """Endpoint da API para visualização e edição de Presenças."""
+    queryset = Presenca.objects.all()
+    serializer_class = PresencaSerializer
+
+class MensagemViewSet(viewsets.ModelViewSet):
+    """Endpoint da API para visualização e edição de Mensagens."""
+    queryset = Mensagem.objects.all()
+    serializer_class = MensagemSerializer
+
+class RelatorioViewSet(viewsets.ModelViewSet):
+    """Endpoint da API para visualização e edição de Relatórios."""
+    queryset = Relatorio.objects.all()
+    serializer_class = RelatorioSerializer
