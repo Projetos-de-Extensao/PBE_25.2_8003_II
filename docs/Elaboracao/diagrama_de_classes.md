@@ -24,7 +24,7 @@ skinparam classFontSize 14
 
 class Usuario {
 .. Atributos ..
-+ tipo [aluno, monitor, professor, admin]
++ tipo 
 }
 
 class Disciplina {
