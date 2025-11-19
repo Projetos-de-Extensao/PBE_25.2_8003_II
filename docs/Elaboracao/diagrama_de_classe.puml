@@ -1,0 +1,65 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam classBackgroundColor LightGreen
+skinparam classBorderColor Black
+skinparam classFontSize 14
+
+class Usuario {
+  .. Atributos ..
+  + tipo
+}
+
+class Disciplina {
+  .. Atributos ..
+  + nome
+  + codigo
+}
+
+class Professor {
+}
+
+class Aluno {
+  .. Atributos ..
+  + matricula
+}
+
+class Monitor {
+  .. Atributos ..
+  + horario_fixo
+}
+
+class Presenca {
+  .. Atributos ..
+  + data
+  + presente
+}
+
+class Mensagem {
+  .. Atributos ..
+  + conteudo
+  + data_envio
+}
+
+class Relatorio {
+  .. Atributos ..
+  + data
+  + conteudo
+}
+
+class VagaMonitoria {
+  .. Atributos ..
+  + numero_vagas
+  + prerequisitos
+  + responsabilidades
+  + status
+}
+
+Usuario "1" -- "1" Aluno
+Usuario "1" -- "1" Monitor
+Usuario "1" -- "1" Professor
+
+Professor "n" -- "n" Disciplina
+Monitor "n" -- "n" Disciplina
+
+Presenca "n" --> "1" Aluno
