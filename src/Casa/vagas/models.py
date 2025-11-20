@@ -108,3 +108,14 @@ class Relatorio(models.Model):
 
     def __str__(self):
         return f"Relatório de {self.monitor.usuario.username} - {self.disciplina.nome}"
+    
+class VagaMonitoria(models.Model):
+    professor = models.ForeignKey(Professor, on_delete=models.CASCADE, related_name="vagas")
+    disciplina = models.ForeignKey(Disciplina, on_delete=models.CASCADE, related_name="vagas")
+    numero_vagas = models.IntegerField()
+    prerequisitos = models.TextField()
+    responsabilidades = models.TextField()
+    status = models.CharField(max_length=20, default="aberta")  # aberta / fechada / preenchida
+
+    def __str__(self):
+        return f"Vaga de {self.disciplina.nome} ({self.numero_vagas} vagas)"

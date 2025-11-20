@@ -52,3 +52,8 @@ class RelatorioSerializer(serializers.ModelSerializer):
     class Meta:
         model = Relatorio
         fields = '__all__'
+
+class VagaMonitoriaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = VagaMonitoria
+        fields = '__all__'
