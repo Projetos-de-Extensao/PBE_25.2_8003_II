@@ -1,18 +1,3 @@
-
----
-
-id: diagrama_de_classes
-
-title: Diagrama de Classes
-
----
-
-
-
-## Diagrama de Classes
-
-
-```plantuml
 @startuml
 skinparam classAttributeIconSize 0
 skinparam shadowing false
@@ -40,13 +25,11 @@ class Professor {
 class Aluno {
   .. Atributos ..
   + matricula
-  ' Perfil do Usuario
 }
 
 class Monitor {
   .. Atributos ..
   + horario_fixo
-  ' Perfil do Usuario
 }
 
 class Presenca {
@@ -68,7 +51,7 @@ class Relatorio {
 }
 
 ' --- classe adicionada ---
-class VagaMonitoria {
+class Vaga {
   .. Atributos ..
   + numero_vagas
   + prerequisitos
@@ -82,8 +65,8 @@ Usuario "1" -- "1" Monitor : usuario
 Usuario "1" -- "1" Professor : usuario
 
 ' --- Relacionamentos de Disciplina ---
-Professor "n" -- "n" Disciplina : disciplinas
-Monitor "n" -- "n" Disciplina : disciplinas
+Professor "1" -- "n" Disciplina : ministra
+Monitor "n" -- "n" Disciplina : apoia
 
 ' --- Relacionamentos da Presenca ---
 Presenca "n" --> "1" Aluno : aluno
@@ -98,8 +81,8 @@ Relatorio "n" --> "1" Disciplina : disciplina
 Mensagem "n" --> "1" Usuario : remetente
 Mensagem "n" --> "1" Usuario : destinatario
 
-' --- Relacionamentos de VagaMonitoria ---
-VagaMonitoria "n" --> "1" Professor : professor
-VagaMonitoria "n" --> "1" Disciplina : disciplina
+' --- Relacionamentos de Vaga ---
+Vaga "n" --> "1" Professor : professor
+Vaga "n" --> "1" Disciplina : disciplina
 
 @enduml
